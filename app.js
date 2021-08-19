@@ -31,4 +31,29 @@ document.getElementById('key-pad').addEventListener('click',
             calcInput.value = newNumber;
         }
 
-    })
+    });
+
+
+
+
+
+    //********************************************************************************************
+    //                              Verify
+    document.getElementById('submit-btn').addEventListener('click',
+    function(){
+        verifyPin();
+    });
+
+    function verifyPin(){
+        const pin = document.getElementById('generate-pin-input').value;
+        const typedPin = document.getElementById('typed-numbers').value;
+        if(pin == typedPin){
+            document.getElementById('nofity-pin-matched').style.display = "block";
+            document.getElementById('nofity-pin-not-matched').style.display = "none";
+        }
+        else{
+            document.getElementById('nofity-pin-matched').style.display = "none";
+            document.getElementById('nofity-pin-not-matched').style.display = "block";
+        }
+    }
+
